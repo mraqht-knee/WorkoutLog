@@ -1,0 +1,2383 @@
+Index: app/src/main/res/layout/item_add_set.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_add_set.xml b/app/src/main/res/layout/item_add_set.xml
+new file mode 100644
+--- /dev/null	(date 1744135216097)
++++ b/app/src/main/res/layout/item_add_set.xml	(date 1744135216097)
+@@ -0,0 +1,78 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:orientation="vertical"
++    android:background="@drawable/set_background"
++    android:padding="8dp"
++    android:layout_marginTop="4dp"
++    android:layout_marginBottom="4dp">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal">
++
++        <LinearLayout
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:orientation="horizontal">
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="Reps:" />
++
++            <EditText
++                android:id="@+id/edit_reps"
++                android:layout_width="60dp"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="4dp"
++                android:inputType="number"
++                android:hint="0" />
++        </LinearLayout>
++
++        <LinearLayout
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:orientation="horizontal">
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="Weight:" />
++
++            <EditText
++                android:id="@+id/edit_weight"
++                android:layout_width="60dp"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="4dp"
++                android:inputType="numberDecimal"
++                android:hint="0.0" />
++        </LinearLayout>
++
++        <CheckBox
++            android:id="@+id/check_completed"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Done" />
++
++        <ImageButton
++            android:id="@+id/button_remove_set"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:src="@drawable/ic_remove"
++            android:contentDescription="Remove set" />
++    </LinearLayout>
++
++    <EditText
++        android:id="@+id/edit_set_notes"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="4dp"
++        android:hint="Set notes (optional)"
++        android:inputType="textMultiLine"
++        android:maxLines="2" />
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/item_set_detail.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_set_detail.xml b/app/src/main/res/layout/item_set_detail.xml
+new file mode 100644
+--- /dev/null	(date 1744136342066)
++++ b/app/src/main/res/layout/item_set_detail.xml	(date 1744136342066)
+@@ -0,0 +1,40 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:orientation="vertical"
++    android:padding="8dp">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal"
++        android:gravity="center_vertical">
++
++        <TextView
++            android:id="@+id/text_set_details"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:textSize="16sp"
++            tools:text="10 reps × 135 kg" />
++
++        <CheckBox
++            android:id="@+id/check_set_completed"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Done" />
++    </LinearLayout>
++
++    <TextView
++        android:id="@+id/text_set_notes"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:textSize="14sp"
++        android:textStyle="italic"
++        android:layout_marginTop="4dp"
++        android:layout_marginStart="8dp"
++        tools:text="Keep shoulders back" />
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/item_add_exercise.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_add_exercise.xml b/app/src/main/res/layout/item_add_exercise.xml
+new file mode 100644
+--- /dev/null	(date 1744135192542)
++++ b/app/src/main/res/layout/item_add_exercise.xml	(date 1744135192542)
+@@ -0,0 +1,59 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:orientation="vertical"
++    android:background="@drawable/exercise_background"
++    android:padding="12dp"
++    android:layout_marginBottom="12dp">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal"
++        android:gravity="center_vertical">
++
++        <TextView
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Exercise Name:"
++            android:textStyle="bold" />
++
++        <EditText
++            android:id="@+id/edit_exercise_name"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:layout_marginStart="8dp"
++            android:layout_marginEnd="8dp"
++            android:hint="Enter exercise name" />
++
++        <ImageButton
++            android:id="@+id/button_remove_exercise"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:src="@drawable/ic_remove"
++            android:contentDescription="Remove exercise" />
++    </LinearLayout>
++
++    <TextView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Sets:"
++        android:textStyle="bold"
++        android:layout_marginTop="8dp" />
++
++    <LinearLayout
++        android:id="@+id/layout_sets_container"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="vertical"
++        android:layout_marginTop="4dp" />
++
++    <Button
++        android:id="@+id/button_add_set"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="Add Another Set"
++        android:layout_marginTop="8dp" />
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/item_exercise_detail.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_exercise_detail.xml b/app/src/main/res/layout/item_exercise_detail.xml
+new file mode 100644
+--- /dev/null	(date 1744136321235)
++++ b/app/src/main/res/layout/item_exercise_detail.xml	(date 1744136321235)
+@@ -0,0 +1,41 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:orientation="vertical"
++    android:background="@drawable/exercise_background"
++    android:padding="12dp"
++    android:layout_marginBottom="12dp">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal"
++        android:gravity="center_vertical">
++
++        <TextView
++            android:id="@+id/text_exercise_name"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            tools:text="Bench Press" />
++
++        <CheckBox
++            android:id="@+id/check_exercise_completed"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Completed" />
++    </LinearLayout>
++
++    <LinearLayout
++        android:id="@+id/layout_sets_container"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="vertical"
++        android:layout_marginTop="8dp"
++        android:layout_marginStart="16dp" />
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_workout_detail.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_workout_detail.xml b/app/src/main/res/layout/activity_workout_detail.xml
+new file mode 100644
+--- /dev/null	(date 1744136297378)
++++ b/app/src/main/res/layout/activity_workout_detail.xml	(date 1744136297378)
+@@ -0,0 +1,61 @@
++<?xml version="1.0" encoding="utf-8"?>
++<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".activities.WorkoutDetailActivity">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="vertical"
++        android:padding="16dp">
++
++        <TextView
++            android:id="@+id/text_workout_name"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textSize="24sp"
++            android:textStyle="bold"
++            android:layout_marginBottom="8dp"
++            tools:text="Chest Day" />
++
++        <TextView
++            android:id="@+id/text_workout_date"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textSize="16sp"
++            android:layout_marginBottom="8dp"
++            tools:text="Date: 2025-04-08" />
++
++        <TextView
++            android:id="@+id/text_workout_notes"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textSize="16sp"
++            android:layout_marginBottom="16dp"
++            tools:text="Notes: Focus on form" />
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:text="Track Your Progress"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            android:layout_marginBottom="8dp" />
++
++        <LinearLayout
++            android:id="@+id/layout_exercises_container"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical" />
++
++        <Button
++            android:id="@+id/button_save_progress"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:text="Save Progress"
++            android:layout_marginTop="16dp" />
++
++    </LinearLayout>
++</ScrollView>
+\ No newline at end of file
+Index: app/src/main/res/layout/item_workout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_workout.xml b/app/src/main/res/layout/item_workout.xml
+--- a/app/src/main/res/layout/item_workout.xml	
++++ b/app/src/main/res/layout/item_workout.xml	(date 1744135493087)
+@@ -1,9 +1,10 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.cardview.widget.CardView
++    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    android:layout_margin="4dp"
++    android:layout_margin="8dp"
+     app:cardCornerRadius="8dp"
+     app:cardElevation="4dp">
+ 
+@@ -17,34 +18,31 @@
+             android:id="@+id/text_workout_name"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:text="Workout Name"
+             android:textSize="18sp"
+-            android:textStyle="bold" />
++            android:textStyle="bold"
++            android:text="Workout Name" />
+ 
+         <TextView
+             android:id="@+id/text_date"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:text="Date"
+             android:textSize="14sp"
+-            android:layout_marginTop="4dp" />
++            android:text="Date" />
+ 
+         <TextView
+             android:id="@+id/text_exercise"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:text="Exercise"
++            android:layout_marginTop="8dp"
+             android:textSize="16sp"
+-            android:textStyle="italic"
+-            android:layout_marginTop="8dp" />
++            android:text="Exercise" />
+ 
+         <TextView
+-            android:id="@+id/text_details"
++            android:id="@+id/text_completed"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:text="Sets × Reps × Weight"
++            android:layout_marginTop="4dp"
+             android:textSize="14sp"
+-            android:layout_marginTop="4dp" />
+-
++            android:text="Status" />
+     </LinearLayout>
+ </androidx.cardview.widget.CardView>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_add_workout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_add_workout.xml b/app/src/main/res/layout/activity_add_workout.xml
+--- a/app/src/main/res/layout/activity_add_workout.xml	
++++ b/app/src/main/res/layout/activity_add_workout.xml	(date 1744135116844)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+@@ -14,40 +15,15 @@
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+-            android:text="Add Workout"
+-            android:textSize="24sp"
+-            android:textStyle="bold"
+-            android:layout_marginBottom="16dp" />
+-
+-        <EditText
+-            android:id="@+id/edit_workout_name"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:hint="Workout Name"
+-            android:inputType="text"
+-            android:layout_marginBottom="16dp" />
+-
+-        <TextView
+-            android:id="@+id/text_date"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:text="Date: Today"
++            android:text="Workout Category"
+             android:textSize="16sp"
+-            android:layout_marginBottom="8dp" />
++            android:textStyle="bold" />
+ 
+-        <Button
+-            android:id="@+id/button_change_date"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="Change Date"
+-            android:layout_marginBottom="16dp" />
+-
+-        <EditText
+-            android:id="@+id/edit_exercise"
++        <Spinner
++            android:id="@+id/spinner_workout_category"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:hint="Exercise"
+-            android:inputType="text"
++            android:layout_marginTop="8dp"
+             android:layout_marginBottom="16dp" />
+ 
+         <LinearLayout
+@@ -56,48 +32,67 @@
+             android:orientation="horizontal"
+             android:layout_marginBottom="16dp">
+ 
+-            <EditText
+-                android:id="@+id/edit_sets"
++            <TextView
++                android:id="@+id/text_date"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+-                android:hint="Sets"
+-                android:inputType="number"
+-                android:layout_marginEnd="8dp" />
++                android:text="Date: "
++                android:textSize="16sp" />
+ 
+-            <EditText
+-                android:id="@+id/edit_reps"
+-                android:layout_width="0dp"
+-                android:layout_height="wrap_content"
+-                android:layout_weight="1"
+-                android:hint="Reps"
+-                android:inputType="number"
+-                android:layout_marginEnd="8dp" />
+-
+-            <EditText
+-                android:id="@+id/edit_weight"
+-                android:layout_width="0dp"
++            <Button
++                android:id="@+id/button_change_date"
++                android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+-                android:layout_weight="1"
+-                android:hint="Weight (kg)"
+-                android:inputType="numberDecimal" />
+-
++                android:text="Change Date" />
+         </LinearLayout>
+ 
++        <TextView
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Workout Notes"
++            android:textSize="16sp"
++            android:textStyle="bold" />
++
+         <EditText
+             android:id="@+id/edit_notes"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:hint="Notes (optional)"
++            android:layout_marginTop="8dp"
++            android:layout_marginBottom="16dp"
++            android:hint="Enter general notes about this workout"
+             android:inputType="textMultiLine"
+-            android:minLines="3"
+-            android:layout_marginBottom="24dp" />
++            android:minLines="2" />
++
++        <TextView
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Exercises"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            android:layout_marginBottom="8dp" />
++
++        <LinearLayout
++            android:id="@+id/layout_exercise_container"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical" />
++
++        <Button
++            android:id="@+id/button_add_exercise"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:text="Add Another Exercise"
++            android:layout_marginTop="8dp"
++            android:layout_marginBottom="16dp" />
+ 
+         <Button
+             android:id="@+id/button_save"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+-            android:text="Save Workout" />
+-
++            android:text="Save Workout"
++            android:textSize="16sp"
++            android:padding="12dp"
++            android:layout_marginTop="8dp" />
+     </LinearLayout>
+ </ScrollView>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_remove.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_remove.xml b/app/src/main/res/drawable/ic_remove.xml
+new file mode 100644
+--- /dev/null	(date 1744135371771)
++++ b/app/src/main/res/drawable/ic_remove.xml	(date 1744135371771)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24"
++    android:tint="?attr/colorControlNormal">
++    <path
++        android:fillColor="@android:color/white"
++        android:pathData="M19,13H5v-2h14v2z"/>
++</vector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/set_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/set_background.xml b/app/src/main/res/drawable/set_background.xml
+new file mode 100644
+--- /dev/null	(date 1744135311403)
++++ b/app/src/main/res/drawable/set_background.xml	(date 1744135311403)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <solid android:color="#FFFFFF" />
++    <corners android:radius="4dp" />
++    <stroke android:width="1dp" android:color="#DDDDDD" />
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable/exercise_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/exercise_background.xml b/app/src/main/res/drawable/exercise_background.xml
+new file mode 100644
+--- /dev/null	(date 1744135294290)
++++ b/app/src/main/res/drawable/exercise_background.xml	(date 1744135294290)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <solid android:color="#F5F5F5" />
++    <corners android:radius="8dp" />
++    <stroke android:width="1dp" android:color="#CCCCCC" />
++</shape>
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/models/Workout.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/models/Workout.java b/app/src/main/java/com/example/workoutlogger/models/Workout.java
+--- a/app/src/main/java/com/example/workoutlogger/models/Workout.java	
++++ b/app/src/main/java/com/example/workoutlogger/models/Workout.java	(date 1744134884465)
+@@ -1,37 +1,28 @@
+ package com.example.workoutlogger.models;
+ 
+-// A simple model class to represent a workout
++// Updated Workout model to support multiple exercises
+ public class Workout {
+     private int id;
+-    private String name;
++    private String name;  // Now this will be the category (Chest, Back, etc.)
+     private String date;
+-    private String exercise;
+-    private int sets;
+-    private int reps;
+-    private double weight;
+     private String notes;
++    private boolean completed;  // To track if the workout is completed
+ 
+     // Constructor with ID (used when reading from database)
+-    public Workout(int id, String name, String date, String exercise, int sets, int reps, double weight, String notes) {
++    public Workout(int id, String name, String date, String notes, boolean completed) {
+         this.id = id;
+         this.name = name;
+         this.date = date;
+-        this.exercise = exercise;
+-        this.sets = sets;
+-        this.reps = reps;
+-        this.weight = weight;
+         this.notes = notes;
++        this.completed = completed;
+     }
+ 
+     // Constructor without ID (used when creating a new workout)
+-    public Workout(String name, String date, String exercise, int sets, int reps, double weight, String notes) {
++    public Workout(String name, String date, String notes, boolean completed) {
+         this.name = name;
+         this.date = date;
+-        this.exercise = exercise;
+-        this.sets = sets;
+-        this.reps = reps;
+-        this.weight = weight;
+         this.notes = notes;
++        this.completed = completed;
+     }
+ 
+     // Getters and setters
+@@ -59,38 +50,6 @@
+         this.date = date;
+     }
+ 
+-    public String getExercise() {
+-        return exercise;
+-    }
+-
+-    public void setExercise(String exercise) {
+-        this.exercise = exercise;
+-    }
+-
+-    public int getSets() {
+-        return sets;
+-    }
+-
+-    public void setSets(int sets) {
+-        this.sets = sets;
+-    }
+-
+-    public int getReps() {
+-        return reps;
+-    }
+-
+-    public void setReps(int reps) {
+-        this.reps = reps;
+-    }
+-
+-    public double getWeight() {
+-        return weight;
+-    }
+-
+-    public void setWeight(double weight) {
+-        this.weight = weight;
+-    }
+-
+     public String getNotes() {
+         return notes;
+     }
+@@ -98,4 +57,12 @@
+     public void setNotes(String notes) {
+         this.notes = notes;
+     }
+-}
+\ No newline at end of file
++
++    public boolean isCompleted() {
++        return completed;
++    }
++
++    public void setCompleted(boolean completed) {
++        this.completed = completed;
++    }
++}
+Index: app/src/main/java/com/example/workoutlogger/models/Exercise.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/models/Exercise.java b/app/src/main/java/com/example/workoutlogger/models/Exercise.java
+new file mode 100644
+--- /dev/null	(date 1744134918842)
++++ b/app/src/main/java/com/example/workoutlogger/models/Exercise.java	(date 1744134918842)
+@@ -0,0 +1,74 @@
++package com.example.workoutlogger.models;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class Exercise {
++    private int id;
++    private int workoutId;  // Foreign key reference to the parent workout
++    private String name;
++    private boolean completed;  // To track if the exercise is completed
++    private List<ExerciseSet> sets;
++
++    // Constructor with ID
++    public Exercise(int id, int workoutId, String name, boolean completed) {
++        this.id = id;
++        this.workoutId = workoutId;
++        this.name = name;
++        this.completed = completed;
++        this.sets = new ArrayList<>();
++    }
++
++    // Constructor without ID
++    public Exercise(int workoutId, String name, boolean completed) {
++        this.workoutId = workoutId;
++        this.name = name;
++        this.completed = completed;
++        this.sets = new ArrayList<>();
++    }
++
++    // Getters and setters
++    public int getId() {
++        return id;
++    }
++
++    public void setId(int id) {
++        this.id = id;
++    }
++
++    public int getWorkoutId() {
++        return workoutId;
++    }
++
++    public void setWorkoutId(int workoutId) {
++        this.workoutId = workoutId;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    public boolean isCompleted() {
++        return completed;
++    }
++
++    public void setCompleted(boolean completed) {
++        this.completed = completed;
++    }
++
++    public List<ExerciseSet> getSets() {
++        return sets;
++    }
++
++    public void setSets(List<ExerciseSet> sets) {
++        this.sets = sets;
++    }
++
++    public void addSet(ExerciseSet set) {
++        this.sets.add(set);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/models/ExerciseSet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/models/ExerciseSet.java b/app/src/main/java/com/example/workoutlogger/models/ExerciseSet.java
+new file mode 100644
+--- /dev/null	(date 1744134948982)
++++ b/app/src/main/java/com/example/workoutlogger/models/ExerciseSet.java	(date 1744134948982)
+@@ -0,0 +1,79 @@
++// New model for ExerciseSet
++package com.example.workoutlogger.models;
++
++public class ExerciseSet {
++    private int id;
++    private int exerciseId;  // Foreign key reference to the parent exercise
++    private int reps;
++    private double weight;
++    private String notes;
++    private boolean completed;  // To track if the set is completed
++
++    // Constructor with ID
++    public ExerciseSet(int id, int exerciseId, int reps, double weight, String notes, boolean completed) {
++        this.id = id;
++        this.exerciseId = exerciseId;
++        this.reps = reps;
++        this.weight = weight;
++        this.notes = notes;
++        this.completed = completed;
++    }
++
++    // Constructor without ID
++    public ExerciseSet(int exerciseId, int reps, double weight, String notes, boolean completed) {
++        this.exerciseId = exerciseId;
++        this.reps = reps;
++        this.weight = weight;
++        this.notes = notes;
++        this.completed = completed;
++    }
++
++    // Getters and setters
++    public int getId() {
++        return id;
++    }
++
++    public void setId(int id) {
++        this.id = id;
++    }
++
++    public int getExerciseId() {
++        return exerciseId;
++    }
++
++    public void setExerciseId(int exerciseId) {
++        this.exerciseId = exerciseId;
++    }
++
++    public int getReps() {
++        return reps;
++    }
++
++    public void setReps(int reps) {
++        this.reps = reps;
++    }
++
++    public double getWeight() {
++        return weight;
++    }
++
++    public void setWeight(double weight) {
++        this.weight = weight;
++    }
++
++    public String getNotes() {
++        return notes;
++    }
++
++    public void setNotes(String notes) {
++        this.notes = notes;
++    }
++
++    public boolean isCompleted() {
++        return completed;
++    }
++
++    public void setCompleted(boolean completed) {
++        this.completed = completed;
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/adapters/WorkoutAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/adapters/WorkoutAdapter.java b/app/src/main/java/com/example/workoutlogger/adapters/WorkoutAdapter.java
+--- a/app/src/main/java/com/example/workoutlogger/adapters/WorkoutAdapter.java	
++++ b/app/src/main/java/com/example/workoutlogger/adapters/WorkoutAdapter.java	(date 1744135432339)
+@@ -9,35 +9,26 @@
+ import androidx.recyclerview.widget.RecyclerView;
+ 
+ import com.example.workoutlogger.R;
++import com.example.workoutlogger.database.WorkoutDbHelper;
++import com.example.workoutlogger.models.Exercise;
+ import com.example.workoutlogger.models.Workout;
+ 
+ import java.util.List;
+ 
+ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder> {
+ 
+-    private List<Workout> workoutList;
++    private List<Workout> workouts;
+     private OnItemClickListener listener;
+-
+-    // Interface for click events
+-    public interface OnItemClickListener {
+-        void onItemClick(Workout workout);
+-        void onItemLongClick(Workout workout);
+-    }
++    private WorkoutDbHelper dbHelper;
+ 
+-    // Constructor
+-    public WorkoutAdapter(List<Workout> workoutList) {
+-        this.workoutList = workoutList;
+-    }
+-
+-    // Set click listener
+-    public void setOnItemClickListener(OnItemClickListener listener) {
+-        this.listener = listener;
++    public WorkoutAdapter(List<Workout> workouts, WorkoutDbHelper dbHelper) {
++        this.workouts = workouts;
++        this.dbHelper = dbHelper;
+     }
+ 
+     @NonNull
+     @Override
+     public WorkoutViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+-        // Inflate the layout
+         View itemView = LayoutInflater.from(parent.getContext())
+                 .inflate(R.layout.item_workout, parent, false);
+         return new WorkoutViewHolder(itemView);
+@@ -45,59 +36,72 @@
+ 
+     @Override
+     public void onBindViewHolder(@NonNull WorkoutViewHolder holder, int position) {
+-        // Get workout at this position
+-        Workout workout = workoutList.get(position);
++        Workout workout = workouts.get(position);
+ 
+-        // Set the workout data to the views
++        // Set the workout name (category) and date
+         holder.textWorkoutName.setText(workout.getName());
+         holder.textDate.setText(workout.getDate());
+-        holder.textExercise.setText(workout.getExercise());
++
++        // Get the first exercise for this workout to display as a preview
++        // You could also show "Multiple exercises" or the count
++        List<Exercise> exercises = dbHelper.getExercisesForWorkout(workout.getId());
++        if (!exercises.isEmpty()) {
++            // Show the first exercise name
++            Exercise firstExercise = exercises.get(0);
++            holder.textExercise.setText(firstExercise.getName());
+ 
+-        // Format the sets, reps, and weight into a string
+-        String details = workout.getSets() + " sets × " +
+-                workout.getReps() + " reps × " +
+-                workout.getWeight() + " kg";
+-        holder.textDetails.setText(details);
++            // Optionally show exercise count if more than one
++            if (exercises.size() > 1) {
++                holder.textExercise.append(" + " + (exercises.size() - 1) + " more");
++            }
++        } else {
++            holder.textExercise.setText("No exercises");
++        }
++
++        // Set completed status
++        holder.textCompleted.setText(workout.isCompleted() ? "Completed" : "Not completed");
+     }
+ 
+     @Override
+     public int getItemCount() {
+-        return workoutList.size();
+-    }
+-
+-    // Update the data in the adapter
+-    public void updateWorkouts(List<Workout> newWorkouts) {
+-        this.workoutList = newWorkouts;
+-        notifyDataSetChanged();
++        return workouts.size();
+     }
+ 
+-    // ViewHolder class
+-    public class WorkoutViewHolder extends RecyclerView.ViewHolder {
+-        public TextView textWorkoutName, textDate, textExercise, textDetails;
++    class WorkoutViewHolder extends RecyclerView.ViewHolder {
++        TextView textWorkoutName, textDate, textExercise, textCompleted;
+ 
+-        public WorkoutViewHolder(@NonNull View itemView) {
+-            super(itemView);
+-            textWorkoutName = itemView.findViewById(R.id.text_workout_name);
+-            textDate = itemView.findViewById(R.id.text_date);
+-            textExercise = itemView.findViewById(R.id.text_exercise);
+-            textDetails = itemView.findViewById(R.id.text_details);
++        WorkoutViewHolder(View view) {
++            super(view);
++            textWorkoutName = view.findViewById(R.id.text_workout_name);
++            textDate = view.findViewById(R.id.text_date);
++            textExercise = view.findViewById(R.id.text_exercise);
++            textCompleted = view.findViewById(R.id.text_completed);
+ 
+-            // Set click listeners
+-            itemView.setOnClickListener(v -> {
++            // Set up click listeners
++            view.setOnClickListener(v -> {
+                 int position = getAdapterPosition();
+                 if (position != RecyclerView.NO_POSITION && listener != null) {
+-                    listener.onItemClick(workoutList.get(position));
++                    listener.onItemClick(workouts.get(position));
+                 }
+             });
+ 
+-            itemView.setOnLongClickListener(v -> {
++            view.setOnLongClickListener(v -> {
+                 int position = getAdapterPosition();
+                 if (position != RecyclerView.NO_POSITION && listener != null) {
+-                    listener.onItemLongClick(workoutList.get(position));
++                    listener.onItemLongClick(workouts.get(position));
+                     return true;
+                 }
+                 return false;
+             });
+         }
+     }
++
++    public interface OnItemClickListener {
++        void onItemClick(Workout workout);
++        void onItemLongClick(Workout workout);
++    }
++
++    public void setOnItemClickListener(OnItemClickListener listener) {
++        this.listener = listener;
++    }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/database/WorkoutContract.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/database/WorkoutContract.java b/app/src/main/java/com/example/workoutlogger/database/WorkoutContract.java
+--- a/app/src/main/java/com/example/workoutlogger/database/WorkoutContract.java	
++++ b/app/src/main/java/com/example/workoutlogger/database/WorkoutContract.java	(date 1744134977334)
+@@ -2,21 +2,36 @@
+ 
+ import android.provider.BaseColumns;
+ 
+-// Define the database schema in a contract class
++// Updated database schema to support multiple exercises and sets
+ public final class WorkoutContract {
+ 
+     // Private constructor to prevent instantiation
+     private WorkoutContract() {}
+ 
+-    // Inner class that defines the table contents
++    // Inner class that defines the workout table
+     public static class WorkoutEntry implements BaseColumns {
+         public static final String TABLE_NAME = "workout";
++        public static final String COLUMN_NAME = "name";  // Now represents workout category
++        public static final String COLUMN_DATE = "date";
++        public static final String COLUMN_NOTES = "notes";
++        public static final String COLUMN_COMPLETED = "completed";  // Boolean to track completion
++    }
++
++    // Inner class that defines the exercise table
++    public static class ExerciseEntry implements BaseColumns {
++        public static final String TABLE_NAME = "exercise";
++        public static final String COLUMN_WORKOUT_ID = "workout_id";  // Foreign key to workout
+         public static final String COLUMN_NAME = "name";
+-        public static final String COLUMN_DATE = "date";
+-        public static final String COLUMN_EXERCISE = "exercise";
+-        public static final String COLUMN_SETS = "sets";
++        public static final String COLUMN_COMPLETED = "completed";  // Boolean to track completion
++    }
++
++    // Inner class that defines the exercise set table
++    public static class SetEntry implements BaseColumns {
++        public static final String TABLE_NAME = "exercise_set";
++        public static final String COLUMN_EXERCISE_ID = "exercise_id";  // Foreign key to exercise
+         public static final String COLUMN_REPS = "reps";
+         public static final String COLUMN_WEIGHT = "weight";
+         public static final String COLUMN_NOTES = "notes";
++        public static final String COLUMN_COMPLETED = "completed";  // Boolean to track completion
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/database/WorkoutDbHelper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/database/WorkoutDbHelper.java b/app/src/main/java/com/example/workoutlogger/database/WorkoutDbHelper.java
+--- a/app/src/main/java/com/example/workoutlogger/database/WorkoutDbHelper.java	
++++ b/app/src/main/java/com/example/workoutlogger/database/WorkoutDbHelper.java	(date 1744135738283)
+@@ -6,6 +6,8 @@
+ import android.database.sqlite.SQLiteDatabase;
+ import android.database.sqlite.SQLiteOpenHelper;
+ 
++import com.example.workoutlogger.models.Exercise;
++import com.example.workoutlogger.models.ExerciseSet;
+ import com.example.workoutlogger.models.Workout;
+ 
+ import java.util.ArrayList;
+@@ -13,26 +15,47 @@
+ 
+ public class WorkoutDbHelper extends SQLiteOpenHelper {
+     // Database Version
+-    private static final int DATABASE_VERSION = 1;
++    private static final int DATABASE_VERSION = 2;  // Increased for schema update
+ 
+     // Database Name
+     private static final String DATABASE_NAME = "workout_logger.db";
+ 
+-    // SQL command to create the table
+-    private static final String SQL_CREATE_ENTRIES =
++    // SQL commands to create tables
++    private static final String SQL_CREATE_WORKOUT_TABLE =
+             "CREATE TABLE " + WorkoutContract.WorkoutEntry.TABLE_NAME + " (" +
+                     WorkoutContract.WorkoutEntry._ID + " INTEGER PRIMARY KEY," +
+                     WorkoutContract.WorkoutEntry.COLUMN_NAME + " TEXT," +
+                     WorkoutContract.WorkoutEntry.COLUMN_DATE + " TEXT," +
+-                    WorkoutContract.WorkoutEntry.COLUMN_EXERCISE + " TEXT," +
+-                    WorkoutContract.WorkoutEntry.COLUMN_SETS + " INTEGER," +
+-                    WorkoutContract.WorkoutEntry.COLUMN_REPS + " INTEGER," +
+-                    WorkoutContract.WorkoutEntry.COLUMN_WEIGHT + " REAL," +
+-                    WorkoutContract.WorkoutEntry.COLUMN_NOTES + " TEXT)";
++                    WorkoutContract.WorkoutEntry.COLUMN_NOTES + " TEXT," +
++                    WorkoutContract.WorkoutEntry.COLUMN_COMPLETED + " INTEGER)";
++
++    private static final String SQL_CREATE_EXERCISE_TABLE =
++            "CREATE TABLE " + WorkoutContract.ExerciseEntry.TABLE_NAME + " (" +
++                    WorkoutContract.ExerciseEntry._ID + " INTEGER PRIMARY KEY," +
++                    WorkoutContract.ExerciseEntry.COLUMN_WORKOUT_ID + " INTEGER," +
++                    WorkoutContract.ExerciseEntry.COLUMN_NAME + " TEXT," +
++                    WorkoutContract.ExerciseEntry.COLUMN_COMPLETED + " INTEGER," +
++                    "FOREIGN KEY(" + WorkoutContract.ExerciseEntry.COLUMN_WORKOUT_ID + ") " +
++                    "REFERENCES " + WorkoutContract.WorkoutEntry.TABLE_NAME + "(" + WorkoutContract.WorkoutEntry._ID + "))";
+ 
+-    // SQL command to delete the table
+-    private static final String SQL_DELETE_ENTRIES =
++    private static final String SQL_CREATE_SET_TABLE =
++            "CREATE TABLE " + WorkoutContract.SetEntry.TABLE_NAME + " (" +
++                    WorkoutContract.SetEntry._ID + " INTEGER PRIMARY KEY," +
++                    WorkoutContract.SetEntry.COLUMN_EXERCISE_ID + " INTEGER," +
++                    WorkoutContract.SetEntry.COLUMN_REPS + " INTEGER," +
++                    WorkoutContract.SetEntry.COLUMN_WEIGHT + " REAL," +
++                    WorkoutContract.SetEntry.COLUMN_NOTES + " TEXT," +
++                    WorkoutContract.SetEntry.COLUMN_COMPLETED + " INTEGER," +
++                    "FOREIGN KEY(" + WorkoutContract.SetEntry.COLUMN_EXERCISE_ID + ") " +
++                    "REFERENCES " + WorkoutContract.ExerciseEntry.TABLE_NAME + "(" + WorkoutContract.ExerciseEntry._ID + "))";
++
++    // SQL commands to delete tables
++    private static final String SQL_DELETE_WORKOUT_TABLE =
+             "DROP TABLE IF EXISTS " + WorkoutContract.WorkoutEntry.TABLE_NAME;
++    private static final String SQL_DELETE_EXERCISE_TABLE =
++            "DROP TABLE IF EXISTS " + WorkoutContract.ExerciseEntry.TABLE_NAME;
++    private static final String SQL_DELETE_SET_TABLE =
++            "DROP TABLE IF EXISTS " + WorkoutContract.SetEntry.TABLE_NAME;
+ 
+     public WorkoutDbHelper(Context context) {
+         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+@@ -40,82 +63,308 @@
+ 
+     @Override
+     public void onCreate(SQLiteDatabase db) {
+-        db.execSQL(SQL_CREATE_ENTRIES);
++        // Create tables in correct order for foreign key constraints
++        db.execSQL(SQL_CREATE_WORKOUT_TABLE);
++        db.execSQL(SQL_CREATE_EXERCISE_TABLE);
++        db.execSQL(SQL_CREATE_SET_TABLE);
++
++        // Enable foreign key constraints
++        db.execSQL("PRAGMA foreign_keys=ON;");
+     }
+ 
+     @Override
+     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+-        // This database is only a cache for online data, so its upgrade policy
+-        // is to simply discard the data and start over
+-        db.execSQL(SQL_DELETE_ENTRIES);
++        // This drops all tables and recreates them - in a production app, you'd want a proper migration
++        db.execSQL(SQL_DELETE_SET_TABLE);
++        db.execSQL(SQL_DELETE_EXERCISE_TABLE);
++        db.execSQL(SQL_DELETE_WORKOUT_TABLE);
+         onCreate(db);
+     }
+ 
+-    // Method to add a new workout to the database
+-    public long addWorkout(Workout workout) {
+-        // Get the database
++    // Transaction to save a complete workout with exercises and sets
++    public long addWorkout(Workout workout, List<Exercise> exercises) {
+         SQLiteDatabase db = this.getWritableDatabase();
++        long workoutId = -1;
++
++        // Start transaction
++        db.beginTransaction();
++        try {
++            // Save workout
++            ContentValues workoutValues = new ContentValues();
++            workoutValues.put(WorkoutContract.WorkoutEntry.COLUMN_NAME, workout.getName());
++            workoutValues.put(WorkoutContract.WorkoutEntry.COLUMN_DATE, workout.getDate());
++            workoutValues.put(WorkoutContract.WorkoutEntry.COLUMN_NOTES, workout.getNotes());
++            workoutValues.put(WorkoutContract.WorkoutEntry.COLUMN_COMPLETED, workout.isCompleted() ? 1 : 0);
+ 
+-        // Create a new map of values, where column names are the keys
+-        ContentValues values = new ContentValues();
+-        values.put(WorkoutContract.WorkoutEntry.COLUMN_NAME, workout.getName());
+-        values.put(WorkoutContract.WorkoutEntry.COLUMN_DATE, workout.getDate());
+-        values.put(WorkoutContract.WorkoutEntry.COLUMN_EXERCISE, workout.getExercise());
+-        values.put(WorkoutContract.WorkoutEntry.COLUMN_SETS, workout.getSets());
+-        values.put(WorkoutContract.WorkoutEntry.COLUMN_REPS, workout.getReps());
+-        values.put(WorkoutContract.WorkoutEntry.COLUMN_WEIGHT, workout.getWeight());
+-        values.put(WorkoutContract.WorkoutEntry.COLUMN_NOTES, workout.getNotes());
++            workoutId = db.insert(WorkoutContract.WorkoutEntry.TABLE_NAME, null, workoutValues);
+ 
+-        // Insert the new row, returning the primary key value of the new row
+-        long newRowId = db.insert(WorkoutContract.WorkoutEntry.TABLE_NAME, null, values);
++            // Save exercises and their sets
++            if (workoutId != -1) {
++                for (Exercise exercise : exercises) {
++                    ContentValues exerciseValues = new ContentValues();
++                    exerciseValues.put(WorkoutContract.ExerciseEntry.COLUMN_WORKOUT_ID, workoutId);
++                    exerciseValues.put(WorkoutContract.ExerciseEntry.COLUMN_NAME, exercise.getName());
++                    exerciseValues.put(WorkoutContract.ExerciseEntry.COLUMN_COMPLETED, exercise.isCompleted() ? 1 : 0);
+ 
+-        // Close the database connection
+-        db.close();
++                    long exerciseId = db.insert(WorkoutContract.ExerciseEntry.TABLE_NAME, null, exerciseValues);
+ 
+-        return newRowId;
+-    }
++                    if (exerciseId != -1) {
++                        for (ExerciseSet set : exercise.getSets()) {
++                            ContentValues setValues = new ContentValues();
++                            setValues.put(WorkoutContract.SetEntry.COLUMN_EXERCISE_ID, exerciseId);
++                            setValues.put(WorkoutContract.SetEntry.COLUMN_REPS, set.getReps());
++                            setValues.put(WorkoutContract.SetEntry.COLUMN_WEIGHT, set.getWeight());
++                            setValues.put(WorkoutContract.SetEntry.COLUMN_NOTES, set.getNotes());
++                            setValues.put(WorkoutContract.SetEntry.COLUMN_COMPLETED, set.isCompleted() ? 1 : 0);
++
++                            db.insert(WorkoutContract.SetEntry.TABLE_NAME, null, setValues);
++                        }
++                    }
++                }
++            }
+ 
+-    // Method to retrieve all workouts from the database
++            // Mark transaction successful
++            db.setTransactionSuccessful();
++        } finally {
++            // End transaction
++            db.endTransaction();
++        }
++
++        return workoutId;
++    }
++
++    // Get all workouts with basic info
+     public List<Workout> getAllWorkouts() {
+         List<Workout> workoutList = new ArrayList<>();
+ 
+-        // Select All Query
+         String selectQuery = "SELECT * FROM " + WorkoutContract.WorkoutEntry.TABLE_NAME +
+                 " ORDER BY " + WorkoutContract.WorkoutEntry.COLUMN_DATE + " DESC";
+ 
+         SQLiteDatabase db = this.getReadableDatabase();
+         Cursor cursor = db.rawQuery(selectQuery, null);
+ 
+-        // Loop through all rows and add to list
+         if (cursor.moveToFirst()) {
+             do {
+                 Workout workout = new Workout(
+                         cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry._ID)),
+                         cursor.getString(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_NAME)),
+                         cursor.getString(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_DATE)),
+-                        cursor.getString(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_EXERCISE)),
+-                        cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_SETS)),
+-                        cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_REPS)),
+-                        cursor.getDouble(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_WEIGHT)),
+-                        cursor.getString(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_NOTES))
++                        cursor.getString(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_NOTES)),
++                        cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_COMPLETED)) == 1
+                 );
+                 workoutList.add(workout);
+             } while (cursor.moveToNext());
+         }
+ 
+-        // Close the cursor and database connection
+         cursor.close();
+-        db.close();
+-
+         return workoutList;
+     }
+ 
+-    // Method to delete a workout from the database
+-    public void deleteWorkout(int id) {
++    // Get complete workout details including exercises and sets
++    public Workout getWorkoutWithDetails(int workoutId) {
++        SQLiteDatabase db = this.getReadableDatabase();
++        Workout workout = null;
++        List<Exercise> exercises = new ArrayList<>();
++
++        // Query for workout
++        String workoutQuery = "SELECT * FROM " + WorkoutContract.WorkoutEntry.TABLE_NAME +
++                " WHERE " + WorkoutContract.WorkoutEntry._ID + " = ?";
++        Cursor workoutCursor = db.rawQuery(workoutQuery, new String[]{String.valueOf(workoutId)});
++
++        if (workoutCursor.moveToFirst()) {
++            workout = new Workout(
++                    workoutCursor.getInt(workoutCursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry._ID)),
++                    workoutCursor.getString(workoutCursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_NAME)),
++                    workoutCursor.getString(workoutCursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_DATE)),
++                    workoutCursor.getString(workoutCursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_NOTES)),
++                    workoutCursor.getInt(workoutCursor.getColumnIndexOrThrow(WorkoutContract.WorkoutEntry.COLUMN_COMPLETED)) == 1
++            );
++        }
++        workoutCursor.close();
++
++        if (workout != null) {
++            // Query for exercises
++            String exerciseQuery = "SELECT * FROM " + WorkoutContract.ExerciseEntry.TABLE_NAME +
++                    " WHERE " + WorkoutContract.ExerciseEntry.COLUMN_WORKOUT_ID + " = ?";
++            Cursor exerciseCursor = db.rawQuery(exerciseQuery, new String[]{String.valueOf(workoutId)});
++
++            if (exerciseCursor.moveToFirst()) {
++                do {
++                    int exerciseId = exerciseCursor.getInt(exerciseCursor.getColumnIndexOrThrow(WorkoutContract.ExerciseEntry._ID));
++                    Exercise exercise = new Exercise(
++                            exerciseId,
++                            workoutId,
++                            exerciseCursor.getString(exerciseCursor.getColumnIndexOrThrow(WorkoutContract.ExerciseEntry.COLUMN_NAME)),
++                            exerciseCursor.getInt(exerciseCursor.getColumnIndexOrThrow(WorkoutContract.ExerciseEntry.COLUMN_COMPLETED)) == 1
++                    );
++
++                    // Query for sets
++                    String setQuery = "SELECT * FROM " + WorkoutContract.SetEntry.TABLE_NAME +
++                            " WHERE " + WorkoutContract.SetEntry.COLUMN_EXERCISE_ID + " = ?";
++                    Cursor setCursor = db.rawQuery(setQuery, new String[]{String.valueOf(exerciseId)});
++
++                    if (setCursor.moveToFirst()) {
++                        do {
++                            ExerciseSet set = new ExerciseSet(
++                                    setCursor.getInt(setCursor.getColumnIndexOrThrow(WorkoutContract.SetEntry._ID)),
++                                    exerciseId,
++                                    setCursor.getInt(setCursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_REPS)),
++                                    setCursor.getDouble(setCursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_WEIGHT)),
++                                    setCursor.getString(setCursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_NOTES)),
++                                    setCursor.getInt(setCursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_COMPLETED)) == 1
++                            );
++                            exercise.addSet(set);
++                        } while (setCursor.moveToNext());
++                    }
++                    setCursor.close();
++
++                    exercises.add(exercise);
++                } while (exerciseCursor.moveToNext());
++            }
++            exerciseCursor.close();
++        }
++
++        return workout;
++    }
++
++    // Update workout completion status
++    public int updateWorkoutCompletion(int workoutId, boolean completed) {
+         SQLiteDatabase db = this.getWritableDatabase();
+-        db.delete(WorkoutContract.WorkoutEntry.TABLE_NAME,
++        ContentValues values = new ContentValues();
++        values.put(WorkoutContract.WorkoutEntry.COLUMN_COMPLETED, completed ? 1 : 0);
++
++        return db.update(
++                WorkoutContract.WorkoutEntry.TABLE_NAME,
++                values,
+                 WorkoutContract.WorkoutEntry._ID + " = ?",
+-                new String[] { String.valueOf(id) });
+-        db.close();
++                new String[]{String.valueOf(workoutId)}
++        );
++    }
++
++    // Update exercise completion status
++    public int updateExerciseCompletion(int exerciseId, boolean completed) {
++        SQLiteDatabase db = this.getWritableDatabase();
++        ContentValues values = new ContentValues();
++        values.put(WorkoutContract.ExerciseEntry.COLUMN_COMPLETED, completed ? 1 : 0);
++
++        return db.update(
++                WorkoutContract.ExerciseEntry.TABLE_NAME,
++                values,
++                WorkoutContract.ExerciseEntry._ID + " = ?",
++                new String[]{String.valueOf(exerciseId)}
++        );
++    }
++
++    // Update set completion status
++    public int updateSetCompletion(int setId, boolean completed) {
++        SQLiteDatabase db = this.getWritableDatabase();
++        ContentValues values = new ContentValues();
++        values.put(WorkoutContract.SetEntry.COLUMN_COMPLETED, completed ? 1 : 0);
++
++        return db.update(
++                WorkoutContract.SetEntry.TABLE_NAME,
++                values,
++                WorkoutContract.SetEntry._ID + " = ?",
++                new String[]{String.valueOf(setId)}
++        );
++    }
++
++    // Delete a workout and its related exercises and sets
++    public void deleteWorkout(int workoutId) {
++        SQLiteDatabase db = this.getWritableDatabase();
++
++        // Start transaction
++        db.beginTransaction();
++        try {
++            // First, get all exercises for this workout
++            String exerciseQuery = "SELECT " + WorkoutContract.ExerciseEntry._ID + " FROM " +
++                    WorkoutContract.ExerciseEntry.TABLE_NAME +
++                    " WHERE " + WorkoutContract.ExerciseEntry.COLUMN_WORKOUT_ID + " = ?";
++            Cursor exerciseCursor = db.rawQuery(exerciseQuery, new String[]{String.valueOf(workoutId)});
++
++            if (exerciseCursor.moveToFirst()) {
++                do {
++                    int exerciseId = exerciseCursor.getInt(exerciseCursor.getColumnIndexOrThrow(WorkoutContract.ExerciseEntry._ID));
++
++                    // Delete sets for this exercise
++                    db.delete(
++                            WorkoutContract.SetEntry.TABLE_NAME,
++                            WorkoutContract.SetEntry.COLUMN_EXERCISE_ID + " = ?",
++                            new String[]{String.valueOf(exerciseId)}
++                    );
++                } while (exerciseCursor.moveToNext());
++            }
++            exerciseCursor.close();
++
++            // Then delete exercises
++            db.delete(
++                    WorkoutContract.ExerciseEntry.TABLE_NAME,
++                    WorkoutContract.ExerciseEntry.COLUMN_WORKOUT_ID + " = ?",
++                    new String[]{String.valueOf(workoutId)}
++            );
++
++            // Finally delete the workout
++            db.delete(
++                    WorkoutContract.WorkoutEntry.TABLE_NAME,
++                    WorkoutContract.WorkoutEntry._ID + " = ?",
++                    new String[]{String.valueOf(workoutId)}
++            );
++
++            // Mark transaction successful
++            db.setTransactionSuccessful();
++        } finally {
++            // End transaction
++            db.endTransaction();
++        }
++    }
++    // Add this method to your WorkoutDbHelper class
++    public List<Exercise> getExercisesForWorkout(int workoutId) {
++        List<Exercise> exercises = new ArrayList<>();
++
++        String query = "SELECT * FROM " + WorkoutContract.ExerciseEntry.TABLE_NAME +
++                " WHERE " + WorkoutContract.ExerciseEntry.COLUMN_WORKOUT_ID + " = ?";
++
++        SQLiteDatabase db = this.getReadableDatabase();
++        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(workoutId)});
++
++        if (cursor.moveToFirst()) {
++            do {
++                int exerciseId = cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.ExerciseEntry._ID));
++                String name = cursor.getString(cursor.getColumnIndexOrThrow(WorkoutContract.ExerciseEntry.COLUMN_NAME));
++                boolean completed = cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.ExerciseEntry.COLUMN_COMPLETED)) == 1;
++
++                Exercise exercise = new Exercise(exerciseId, workoutId, name, completed);
++                exercises.add(exercise);
++            } while (cursor.moveToNext());
++        }
++
++        cursor.close();
++        return exercises;
++    }
++    // Add this method to your WorkoutDbHelper class
++    public List<ExerciseSet> getSetsForExercise(int exerciseId) {
++        List<ExerciseSet> sets = new ArrayList<>();
++
++        String query = "SELECT * FROM " + WorkoutContract.SetEntry.TABLE_NAME +
++                " WHERE " + WorkoutContract.SetEntry.COLUMN_EXERCISE_ID + " = ?";
++
++        SQLiteDatabase db = this.getReadableDatabase();
++        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(exerciseId)});
++
++        if (cursor.moveToFirst()) {
++            do {
++                int setId = cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.SetEntry._ID));
++                int reps = cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_REPS));
++                double weight = cursor.getDouble(cursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_WEIGHT));
++                String notes = cursor.getString(cursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_NOTES));
++                boolean completed = cursor.getInt(cursor.getColumnIndexOrThrow(WorkoutContract.SetEntry.COLUMN_COMPLETED)) == 1;
++
++                ExerciseSet set = new ExerciseSet(setId, exerciseId, reps, weight, notes, completed);
++                sets.add(set);
++            } while (cursor.moveToNext());
++        }
++
++        cursor.close();
++        return sets;
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/activities/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/activities/MainActivity.java b/app/src/main/java/com/example/workoutlogger/activities/MainActivity.java
+--- a/app/src/main/java/com/example/workoutlogger/activities/MainActivity.java	
++++ b/app/src/main/java/com/example/workoutlogger/activities/MainActivity.java	(date 1744136536063)
+@@ -14,9 +14,6 @@
+ import java.util.Collections;
+ import java.util.HashSet;
+ import java.util.Set;
+-import android.content.Intent;
+-import androidx.annotation.NonNull;
+-import android.view.MenuItem;
+ import com.example.workoutlogger.R;
+ import com.example.workoutlogger.adapters.WorkoutAdapter;
+ import com.example.workoutlogger.database.WorkoutDbHelper;
+@@ -32,8 +29,8 @@
+     private WorkoutDbHelper dbHelper;
+     private List<Workout> workoutList;
+ 
+-
+     private static final int ADD_WORKOUT_REQUEST = 1;
++    private static final int REQUEST_WORKOUT_DETAIL = 2;  // Moved to class level
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -63,18 +60,16 @@
+     // Load workouts from database
+     private void loadWorkouts() {
+         workoutList = dbHelper.getAllWorkouts();
+-        adapter = new WorkoutAdapter(workoutList);
++        adapter = new WorkoutAdapter(workoutList, dbHelper);
+         recyclerView.setAdapter(adapter);
+ 
+         // Set up click listeners
+         adapter.setOnItemClickListener(new WorkoutAdapter.OnItemClickListener() {
+             @Override
+             public void onItemClick(Workout workout) {
+-                // For simplicity, just display some details in a toast
+-                Toast.makeText(MainActivity.this,
+-                        "Workout: " + workout.getName() + "\n" +
+-                                "Notes: " + workout.getNotes(),
+-                        Toast.LENGTH_SHORT).show();
++                // Launch detail activity
++                Intent intent = WorkoutDetailActivity.newIntent(MainActivity.this, workout.getId());
++                startActivityForResult(intent, REQUEST_WORKOUT_DETAIL);
+             }
+ 
+             @Override
+@@ -101,9 +96,12 @@
+         super.onActivityResult(requestCode, resultCode, data);
+ 
+         if (requestCode == ADD_WORKOUT_REQUEST && resultCode == RESULT_OK) {
+-            // Reload workouts
++            // Reload workouts after adding new one
+             loadWorkouts();
+             Toast.makeText(this, "Workout saved", Toast.LENGTH_SHORT).show();
++        } else if (requestCode == REQUEST_WORKOUT_DETAIL && resultCode == RESULT_OK) {
++            // Reload workouts after updating progress
++            loadWorkouts();
+         }
+     }
+ 
+@@ -129,4 +127,4 @@
+         }
+         return super.onOptionsItemSelected(item);
+     }
+-}
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/activities/ProgressActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/activities/ProgressActivity.java b/app/src/main/java/com/example/workoutlogger/activities/ProgressActivity.java
+--- a/app/src/main/java/com/example/workoutlogger/activities/ProgressActivity.java	
++++ b/app/src/main/java/com/example/workoutlogger/activities/ProgressActivity.java	(date 1744135663304)
+@@ -1,4 +1,3 @@
+-
+ package com.example.workoutlogger.activities;
+ 
+ import android.graphics.Color;
+@@ -17,6 +16,8 @@
+ import androidx.appcompat.app.AppCompatActivity;
+ import com.example.workoutlogger.R;
+ import com.example.workoutlogger.database.WorkoutDbHelper;
++import com.example.workoutlogger.models.Exercise;
++import com.example.workoutlogger.models.ExerciseSet;
+ import com.example.workoutlogger.models.Workout;
+ import com.github.mikephil.charting.charts.LineChart;
+ import com.github.mikephil.charting.components.XAxis;
+@@ -94,13 +95,21 @@
+     }
+ 
+     private void loadExercises() {
++        // Get all exercises from all workouts
++        Set<String> exercises = new HashSet<>();
++
+         // Get all workouts
+         List<Workout> workouts = dbHelper.getAllWorkouts();
+ 
+-        // Extract unique exercise names
+-        Set<String> exercises = new HashSet<>();
++        // Iterate through workouts to get all exercises
+         for (Workout workout : workouts) {
+-            exercises.add(workout.getExercise());
++            // Get all exercises for this workout
++            List<Exercise> workoutExercises = dbHelper.getExercisesForWorkout(workout.getId());
++
++            // Add exercise names to our set (to ensure uniqueness)
++            for (Exercise exercise : workoutExercises) {
++                exercises.add(exercise.getName());
++            }
+         }
+ 
+         // Create adapter with exercise names
+@@ -119,41 +128,66 @@
+     }
+ 
+     private void loadProgressData(String exerciseName) {
++        // Data structures to hold our exercise progress data
++        List<Entry> entries = new ArrayList<>();
++        List<String> dateLabels = new ArrayList<>();
++        Map<String, Float> dateToMaxWeightMap = new HashMap<>();
++        float maxWeight = 0f;
++
+         // Get all workouts
+         List<Workout> allWorkouts = dbHelper.getAllWorkouts();
+ 
+-        // Filter by exercise name
+-        List<Workout> exerciseWorkouts = new ArrayList<>();
++        // Find all exercises with this name and collect their data
+         for (Workout workout : allWorkouts) {
+-            if (workout.getExercise().equals(exerciseName)) {
+-                exerciseWorkouts.add(workout);
++            String date = workout.getDate();
++            List<Exercise> exercises = dbHelper.getExercisesForWorkout(workout.getId());
++
++            for (Exercise exercise : exercises) {
++                if (exercise.getName().equals(exerciseName)) {
++                    // Get the maximum weight for this exercise on this date
++                    float exerciseMaxWeight = 0f;
++
++                    // Get all sets for this exercise
++                    List<ExerciseSet> sets = dbHelper.getSetsForExercise(exercise.getId());
++
++                    for (ExerciseSet set : sets) {
++                        // Find the highest weight across all sets
++                        if (set.getWeight() > exerciseMaxWeight) {
++                            exerciseMaxWeight = (float) set.getWeight();
++                        }
++                    }
++
++                    // Store the max weight for this date
++                    // If we already have a weight for this date, keep the higher one
++                    if (!dateToMaxWeightMap.containsKey(date) ||
++                            dateToMaxWeightMap.get(date) < exerciseMaxWeight) {
++                        dateToMaxWeightMap.put(date, exerciseMaxWeight);
++                    }
++
++                    // Track the overall maximum weight
++                    if (exerciseMaxWeight > maxWeight) {
++                        maxWeight = exerciseMaxWeight;
++                    }
++                }
+             }
+         }
+ 
+         // If no data found
+-        if (exerciseWorkouts.isEmpty()) {
++        if (dateToMaxWeightMap.isEmpty()) {
+             weightChart.clear();
+             personalBestText.setText("No data available");
+             return;
+         }
+ 
+-        // Sort workouts by date (assuming date is in yyyy-MM-dd format)
+-        Collections.sort(exerciseWorkouts, (w1, w2) -> w1.getDate().compareTo(w2.getDate()));
+-
+-        // Prepare chart data
+-        List<Entry> entries = new ArrayList<>();
+-        List<String> labels = new ArrayList<>();
+-        double maxWeight = 0;
++        // Convert map to sorted list for charting
++        List<Map.Entry<String, Float>> sortedEntries = new ArrayList<>(dateToMaxWeightMap.entrySet());
++        Collections.sort(sortedEntries, (e1, e2) -> e1.getKey().compareTo(e2.getKey()));
+ 
+-        for (int i = 0; i < exerciseWorkouts.size(); i++) {
+-            Workout workout = exerciseWorkouts.get(i);
+-            entries.add(new Entry(i, (float) workout.getWeight()));
+-            labels.add(workout.getDate());
+-
+-            // Update max weight
+-            if (workout.getWeight() > maxWeight) {
+-                maxWeight = workout.getWeight();
+-            }
++        // Create chart entries
++        for (int i = 0; i < sortedEntries.size(); i++) {
++            Map.Entry<String, Float> entry = sortedEntries.get(i);
++            entries.add(new Entry(i, entry.getValue()));
++            dateLabels.add(entry.getKey());
+         }
+ 
+         // Update personal best text
+@@ -172,7 +206,7 @@
+         weightChart.setData(lineData);
+ 
+         // Set X-axis labels
+-        weightChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
++        weightChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(dateLabels));
+ 
+         // Refresh chart
+         weightChart.invalidate();
+Index: app/src/main/java/com/example/workoutlogger/activities/AddWorkoutActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/activities/AddWorkoutActivity.java b/app/src/main/java/com/example/workoutlogger/activities/AddWorkoutActivity.java
+--- a/app/src/main/java/com/example/workoutlogger/activities/AddWorkoutActivity.java	
++++ b/app/src/main/java/com/example/workoutlogger/activities/AddWorkoutActivity.java	(date 1744135346708)
+@@ -1,10 +1,18 @@
+ package com.example.workoutlogger.activities;
+ 
+ import android.app.DatePickerDialog;
+-import android.content.Intent;
++import android.content.Context;
+ import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.widget.AdapterView;
++import android.widget.ArrayAdapter;
+ import android.widget.Button;
++import android.widget.CheckBox;
+ import android.widget.EditText;
++import android.widget.ImageButton;
++import android.widget.LinearLayout;
++import android.widget.Spinner;
+ import android.widget.TextView;
+ import android.widget.Toast;
+ 
+@@ -12,21 +20,35 @@
+ 
+ import com.example.workoutlogger.R;
+ import com.example.workoutlogger.database.WorkoutDbHelper;
++import com.example.workoutlogger.models.Exercise;
++import com.example.workoutlogger.models.ExerciseSet;
+ import com.example.workoutlogger.models.Workout;
+ 
+ import java.text.SimpleDateFormat;
++import java.util.ArrayList;
+ import java.util.Calendar;
++import java.util.List;
+ import java.util.Locale;
+ 
+ public class AddWorkoutActivity extends AppCompatActivity {
+ 
+-    private EditText editWorkoutName, editExercise, editSets, editReps, editWeight, editNotes;
++    private Spinner spinnerWorkoutCategory;
+     private TextView textDate;
+-    private Button buttonChangeDate, buttonSave;
++    private EditText editNotes;
++    private Button buttonChangeDate, buttonSave, buttonAddExercise;
++    private LinearLayout layoutExerciseContainer;
+     private WorkoutDbHelper dbHelper;
+     private Calendar calendar;
+     private SimpleDateFormat dateFormat;
+ 
++    // List of workout categories
++    private final String[] workoutCategories = {
++            "Chest", "Back", "Shoulders", "Legs", "Arms", "Abs", "Cardio",
++            "Biceps", "Triceps", "Core", "Glutes", "Hamstrings", "Quadriceps",
++            "Calves", "Forearms", "Full Body", "Upper Body", "Lower Body",
++            "Push", "Pull", "HIIT", "Yoga", "Stretching", "Recovery"
++    };
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+@@ -34,16 +56,15 @@
+         if (getSupportActionBar() != null) {
+             getSupportActionBar().setDisplayShowTitleEnabled(false);
+         }
++
+         // Initialize UI elements
+-        editWorkoutName = findViewById(R.id.edit_workout_name);
+-        editExercise = findViewById(R.id.edit_exercise);
+-        editSets = findViewById(R.id.edit_sets);
+-        editReps = findViewById(R.id.edit_reps);
+-        editWeight = findViewById(R.id.edit_weight);
+-        editNotes = findViewById(R.id.edit_notes);
++        spinnerWorkoutCategory = findViewById(R.id.spinner_workout_category);
+         textDate = findViewById(R.id.text_date);
++        editNotes = findViewById(R.id.edit_notes);
+         buttonChangeDate = findViewById(R.id.button_change_date);
+         buttonSave = findViewById(R.id.button_save);
++        buttonAddExercise = findViewById(R.id.button_add_exercise);
++        layoutExerciseContainer = findViewById(R.id.layout_exercise_container);
+ 
+         // Initialize database helper
+         dbHelper = new WorkoutDbHelper(this);
+@@ -53,6 +74,12 @@
+         dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+         updateDateText();
+ 
++        // Set up workout category spinner
++        ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(
++                this, android.R.layout.simple_spinner_item, workoutCategories);
++        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        spinnerWorkoutCategory.setAdapter(categoryAdapter);
++
+         // Set up date picker button
+         buttonChangeDate.setOnClickListener(v -> {
+             DatePickerDialog datePickerDialog = new DatePickerDialog(
+@@ -70,6 +97,12 @@
+             datePickerDialog.show();
+         });
+ 
++        // Set up add exercise button
++        buttonAddExercise.setOnClickListener(v -> addExerciseView());
++
++        // Add initial exercise view
++        addExerciseView();
++
+         // Set up save button
+         buttonSave.setOnClickListener(v -> saveWorkout());
+     }
+@@ -79,54 +112,139 @@
+         textDate.setText("Date: " + formattedDate);
+     }
+ 
++    private void addExerciseView() {
++        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
++        View exerciseView = inflater.inflate(R.layout.item_add_exercise, null);
++
++        // Initialize the exercise view components
++        EditText editExerciseName = exerciseView.findViewById(R.id.edit_exercise_name);
++        Button buttonAddSet = exerciseView.findViewById(R.id.button_add_set);
++        LinearLayout layoutSetsContainer = exerciseView.findViewById(R.id.layout_sets_container);
++        ImageButton buttonRemoveExercise = exerciseView.findViewById(R.id.button_remove_exercise);
++
++        // Add initial set
++        addSetView(layoutSetsContainer);
++
++        // Set up add set button
++        buttonAddSet.setOnClickListener(v -> addSetView(layoutSetsContainer));
++
++        // Set up remove exercise button
++        buttonRemoveExercise.setOnClickListener(v -> {
++            // Only remove if there's more than one exercise
++            if (layoutExerciseContainer.getChildCount() > 1) {
++                layoutExerciseContainer.removeView(exerciseView);
++            } else {
++                Toast.makeText(this, "You need at least one exercise", Toast.LENGTH_SHORT).show();
++            }
++        });
++
++        // Add the exercise view to the container
++        layoutExerciseContainer.addView(exerciseView);
++    }
++
++    private void addSetView(LinearLayout container) {
++        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
++        View setView = inflater.inflate(R.layout.item_add_set, null);
++
++        // Initialize the set view components
++        EditText editReps = setView.findViewById(R.id.edit_reps);
++        EditText editWeight = setView.findViewById(R.id.edit_weight);
++        EditText editSetNotes = setView.findViewById(R.id.edit_set_notes);
++        CheckBox checkCompleted = setView.findViewById(R.id.check_completed);
++        ImageButton buttonRemoveSet = setView.findViewById(R.id.button_remove_set);
++
++        // Set up remove set button
++        buttonRemoveSet.setOnClickListener(v -> {
++            // Only remove if there's more than one set
++            if (container.getChildCount() > 1) {
++                container.removeView(setView);
++            } else {
++                Toast.makeText(this, "You need at least one set", Toast.LENGTH_SHORT).show();
++            }
++        });
++
++        // Add the set view to the container
++        container.addView(setView);
++    }
++
+     private void saveWorkout() {
+-        // Get input values
+-        String workoutName = editWorkoutName.getText().toString().trim();
+-        String exercise = editExercise.getText().toString().trim();
+-        String notesText = editNotes.getText().toString().trim();
++        // Get workout category
++        String workoutCategory = spinnerWorkoutCategory.getSelectedItem().toString();
++
++        // Get workout date and notes
++        String date = dateFormat.format(calendar.getTime());
++        String workoutNotes = editNotes.getText().toString().trim();
+ 
+-        // Validate inputs
+-        if (workoutName.isEmpty() || exercise.isEmpty()) {
+-            Toast.makeText(this, "Please fill in workout name and exercise", Toast.LENGTH_SHORT).show();
+-            return;
+-        }
++        // Create workout object (not completed initially)
++        Workout workout = new Workout(workoutCategory, date, workoutNotes, false);
++
++        // Create list for exercises
++        List<Exercise> exercises = new ArrayList<>();
++
++        // Process each exercise view
++        for (int i = 0; i < layoutExerciseContainer.getChildCount(); i++) {
++            View exerciseView = layoutExerciseContainer.getChildAt(i);
++            EditText editExerciseName = exerciseView.findViewById(R.id.edit_exercise_name);
++            LinearLayout layoutSetsContainer = exerciseView.findViewById(R.id.layout_sets_container);
++
++            // Get exercise name
++            String exerciseName = editExerciseName.getText().toString().trim();
++
++            // Validate exercise name
++            if (exerciseName.isEmpty()) {
++                Toast.makeText(this, "Please enter a name for all exercises", Toast.LENGTH_SHORT).show();
++                return;
++            }
+ 
+-        // Parse sets, reps, and weight
+-        int sets, reps;
+-        double weight;
++            // Create exercise object (not completed initially)
++            Exercise exercise = new Exercise(0, exerciseName, false);  // workoutId will be set after insert
++
++            // Process each set view
++            for (int j = 0; j < layoutSetsContainer.getChildCount(); j++) {
++                View setView = layoutSetsContainer.getChildAt(j);
++                EditText editReps = setView.findViewById(R.id.edit_reps);
++                EditText editWeight = setView.findViewById(R.id.edit_weight);
++                EditText editSetNotes = setView.findViewById(R.id.edit_set_notes);
++                CheckBox checkCompleted = setView.findViewById(R.id.check_completed);
++
++                // Get set data
++                String repsStr = editReps.getText().toString().trim();
++                String weightStr = editWeight.getText().toString().trim();
++                String setNotes = editSetNotes.getText().toString().trim();
++                boolean completed = checkCompleted.isChecked();
++
++                // Validate and parse numerical values
++                int reps;
++                double weight;
+ 
+-        try {
+-            sets = Integer.parseInt(editSets.getText().toString().trim());
+-            reps = Integer.parseInt(editReps.getText().toString().trim());
+-            weight = Double.parseDouble(editWeight.getText().toString().trim());
+-        } catch (NumberFormatException e) {
+-            Toast.makeText(this, "Please enter valid numbers for sets, reps, and weight", Toast.LENGTH_SHORT).show();
+-            return;
+-        }
++                try {
++                    reps = repsStr.isEmpty() ? 0 : Integer.parseInt(repsStr);
++                    weight = weightStr.isEmpty() ? 0.0 : Double.parseDouble(weightStr);
++                } catch (NumberFormatException e) {
++                    Toast.makeText(this, "Please enter valid numbers for reps and weight", Toast.LENGTH_SHORT).show();
++                    return;
++                }
+ 
+-        // Format date as string
+-        String date = dateFormat.format(calendar.getTime());
++                // Create set object
++                ExerciseSet set = new ExerciseSet(0, reps, weight, setNotes, completed);  // exerciseId will be set after insert
+ 
+-        // Create workout object
+-        Workout workout = new Workout(
+-                workoutName,
+-                date,
+-                exercise,
+-                sets,
+-                reps,
+-                weight,
+-                notesText
+-        );
++                // Add set to exercise
++                exercise.addSet(set);
++            }
+ 
+-        // Save to database
+-        long id = dbHelper.addWorkout(workout);
++            // Add exercise to list
++            exercises.add(exercise);
++        }
+ 
+-        if (id > 0) {
++        // Save workout to database
++        long workoutId = dbHelper.addWorkout(workout, exercises);
++
++        if (workoutId > 0) {
+             // Set result and finish
+             setResult(RESULT_OK);
++            Toast.makeText(this, "Workout saved successfully", Toast.LENGTH_SHORT).show();
+             finish();
+         } else {
+             Toast.makeText(this, "Failed to save workout", Toast.LENGTH_SHORT).show();
+         }
+-    }
+-}
++    }}
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/activities/WorkoutDetailActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/activities/WorkoutDetailActivity.java b/app/src/main/java/com/example/workoutlogger/activities/WorkoutDetailActivity.java
+new file mode 100644
+--- /dev/null	(date 1744136276392)
++++ b/app/src/main/java/com/example/workoutlogger/activities/WorkoutDetailActivity.java	(date 1744136276392)
+@@ -0,0 +1,239 @@
++package com.example.workoutlogger.activities;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.widget.Button;
++import android.widget.CheckBox;
++import android.widget.LinearLayout;
++import android.widget.TextView;
++import android.widget.Toast;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import com.example.workoutlogger.R;
++import com.example.workoutlogger.database.WorkoutDbHelper;
++import com.example.workoutlogger.models.Exercise;
++import com.example.workoutlogger.models.ExerciseSet;
++import com.example.workoutlogger.models.Workout;
++
++import java.util.List;
++
++public class WorkoutDetailActivity extends AppCompatActivity {
++
++    private static final String EXTRA_WORKOUT_ID = "workout_id";
++
++    private TextView textWorkoutName;
++    private TextView textWorkoutDate;
++    private TextView textWorkoutNotes;
++    private LinearLayout layoutExercisesContainer;
++    private Button buttonSaveProgress;
++
++    private WorkoutDbHelper dbHelper;
++    private int workoutId;
++    private Workout workout;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_workout_detail);
++
++        // Initialize UI components
++        textWorkoutName = findViewById(R.id.text_workout_name);
++        textWorkoutDate = findViewById(R.id.text_workout_date);
++        textWorkoutNotes = findViewById(R.id.text_workout_notes);
++        layoutExercisesContainer = findViewById(R.id.layout_exercises_container);
++        buttonSaveProgress = findViewById(R.id.button_save_progress);
++
++        // Initialize database helper
++        dbHelper = new WorkoutDbHelper(this);
++
++        // Get workout ID from intent
++        workoutId = getIntent().getIntExtra(EXTRA_WORKOUT_ID, -1);
++
++        if (workoutId == -1) {
++            Toast.makeText(this, "Error loading workout", Toast.LENGTH_SHORT).show();
++            finish();
++            return;
++        }
++
++        // Load workout details
++        loadWorkoutDetails();
++
++        // Set up save button
++        buttonSaveProgress.setOnClickListener(v -> saveProgress());
++
++        // Set up action bar
++        if (getSupportActionBar() != null) {
++            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
++            getSupportActionBar().setTitle("Workout Details");
++        }
++    }
++
++    private void loadWorkoutDetails() {
++        // Get workout with all details
++        workout = dbHelper.getWorkoutWithDetails(workoutId);
++
++        if (workout == null) {
++            Toast.makeText(this, "Workout not found", Toast.LENGTH_SHORT).show();
++            finish();
++            return;
++        }
++
++        // Set basic workout info
++        textWorkoutName.setText(workout.getName());
++        textWorkoutDate.setText("Date: " + workout.getDate());
++
++        // Set notes if available
++        String notes = workout.getNotes();
++        if (notes != null && !notes.isEmpty()) {
++            textWorkoutNotes.setText("Notes: " + notes);
++            textWorkoutNotes.setVisibility(View.VISIBLE);
++        } else {
++            textWorkoutNotes.setVisibility(View.GONE);
++        }
++
++        // Get exercises for this workout
++        List<Exercise> exercises = dbHelper.getExercisesForWorkout(workoutId);
++
++        // Clear existing views
++        layoutExercisesContainer.removeAllViews();
++
++        // Add exercise views
++        for (Exercise exercise : exercises) {
++            addExerciseView(exercise);
++        }
++    }
++
++    private void addExerciseView(Exercise exercise) {
++        LayoutInflater inflater = LayoutInflater.from(this);
++        View exerciseView = inflater.inflate(R.layout.item_exercise_detail, null);
++
++        // Get views
++        TextView textExerciseName = exerciseView.findViewById(R.id.text_exercise_name);
++        CheckBox checkExerciseCompleted = exerciseView.findViewById(R.id.check_exercise_completed);
++        LinearLayout layoutSetsContainer = exerciseView.findViewById(R.id.layout_sets_container);
++
++        // Set exercise data
++        textExerciseName.setText(exercise.getName());
++        checkExerciseCompleted.setChecked(exercise.isCompleted());
++
++        // Tag with exercise ID for later retrieval
++        checkExerciseCompleted.setTag(exercise.getId());
++
++        // Get sets for this exercise
++        List<ExerciseSet> sets = dbHelper.getSetsForExercise(exercise.getId());
++
++        // Add set views
++        for (ExerciseSet set : sets) {
++            addSetView(layoutSetsContainer, set);
++        }
++
++        // Add to container
++        layoutExercisesContainer.addView(exerciseView);
++    }
++
++    private void addSetView(LinearLayout container, ExerciseSet set) {
++        LayoutInflater inflater = LayoutInflater.from(this);
++        View setView = inflater.inflate(R.layout.item_set_detail, null);
++
++        // Get views
++        TextView textSetDetails = setView.findViewById(R.id.text_set_details);
++        CheckBox checkSetCompleted = setView.findViewById(R.id.check_set_completed);
++        TextView textSetNotes = setView.findViewById(R.id.text_set_notes);
++
++        // Set details
++        String details = set.getReps() + " reps × " + set.getWeight() + " kg";
++        textSetDetails.setText(details);
++
++        // Set notes if available
++        String notes = set.getNotes();
++        if (notes != null && !notes.isEmpty()) {
++            textSetNotes.setText(notes);
++            textSetNotes.setVisibility(View.VISIBLE);
++        } else {
++            textSetNotes.setVisibility(View.GONE);
++        }
++
++        // Set completion status
++        checkSetCompleted.setChecked(set.isCompleted());
++
++        // Tag with set ID for later retrieval
++        checkSetCompleted.setTag(set.getId());
++
++        // Add to container
++        container.addView(setView);
++    }
++
++    private void saveProgress() {
++        boolean workoutCompleted = true;
++
++        // Process exercises
++        for (int i = 0; i < layoutExercisesContainer.getChildCount(); i++) {
++            View exerciseView = layoutExercisesContainer.getChildAt(i);
++            CheckBox checkExerciseCompleted = exerciseView.findViewById(R.id.check_exercise_completed);
++            LinearLayout layoutSetsContainer = exerciseView.findViewById(R.id.layout_sets_container);
++
++            // Get exercise ID and completion status
++            int exerciseId = (int) checkExerciseCompleted.getTag();
++            boolean exerciseCompleted = checkExerciseCompleted.isChecked();
++
++            // Update exercise completion status
++            dbHelper.updateExerciseCompletion(exerciseId, exerciseCompleted);
++
++            // Process sets
++            boolean allSetsCompleted = true;
++            for (int j = 0; j < layoutSetsContainer.getChildCount(); j++) {
++                View setView = layoutSetsContainer.getChildAt(j);
++                CheckBox checkSetCompleted = setView.findViewById(R.id.check_set_completed);
++
++                // Get set ID and completion status
++                int setId = (int) checkSetCompleted.getTag();
++                boolean setCompleted = checkSetCompleted.isChecked();
++
++                // Update set completion status
++                dbHelper.updateSetCompletion(setId, setCompleted);
++
++                // Check if all sets are completed
++                if (!setCompleted) {
++                    allSetsCompleted = false;
++                }
++            }
++
++            // Auto-check exercise if all sets are completed
++            if (allSetsCompleted && !exerciseCompleted) {
++                checkExerciseCompleted.setChecked(true);
++                dbHelper.updateExerciseCompletion(exerciseId, true);
++            }
++
++            // Check if workout is fully completed
++            if (!exerciseCompleted) {
++                workoutCompleted = false;
++            }
++        }
++
++        // Update workout completion status
++        dbHelper.updateWorkoutCompletion(workoutId, workoutCompleted);
++
++        // Show success message
++        Toast.makeText(this, "Progress saved", Toast.LENGTH_SHORT).show();
++
++        // Return to previous screen
++        setResult(RESULT_OK);
++        finish();
++    }
++
++    @Override
++    public boolean onSupportNavigateUp() {
++        onBackPressed();
++        return true;
++    }
++
++    // Static method to create intent
++    public static Intent newIntent(android.content.Context context, int workoutId) {
++        Intent intent = new Intent(context, WorkoutDetailActivity.class);
++        intent.putExtra(EXTRA_WORKOUT_ID, workoutId);
++        return intent;
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/workoutlogger/activities/WorkoutHistoryActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/workoutlogger/activities/WorkoutHistoryActivity.java b/app/src/main/java/com/example/workoutlogger/activities/WorkoutHistoryActivity.java
+--- a/app/src/main/java/com/example/workoutlogger/activities/WorkoutHistoryActivity.java	
++++ b/app/src/main/java/com/example/workoutlogger/activities/WorkoutHistoryActivity.java	(date 1744136010826)
+@@ -11,6 +11,8 @@
+ import com.example.workoutlogger.R;
+ import com.example.workoutlogger.adapters.WorkoutAdapter;
+ import com.example.workoutlogger.database.WorkoutDbHelper;
++import com.example.workoutlogger.models.Exercise;
++import com.example.workoutlogger.models.ExerciseSet;
+ import com.example.workoutlogger.models.Workout;
+ 
+ import java.util.List;
+@@ -26,7 +28,9 @@
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_workout_history);
+-
++        if (getSupportActionBar() != null) {
++            getSupportActionBar().setDisplayShowTitleEnabled(false);
++        }
+         // Initialize the database helper
+         dbHelper = new WorkoutDbHelper(this);
+ 
+@@ -46,19 +50,41 @@
+ 
+     private void loadWorkouts() {
+         workoutList = dbHelper.getAllWorkouts();
+-        adapter = new WorkoutAdapter(workoutList);
++        adapter = new WorkoutAdapter(workoutList,dbHelper);
+         recyclerView.setAdapter(adapter);
+ 
+         // Set click listeners
++        // In your WorkoutHistoryActivity class, find this section and update it:
+         adapter.setOnItemClickListener(new WorkoutAdapter.OnItemClickListener() {
+             @Override
+             public void onItemClick(Workout workout) {
++                // Get exercises for this workout
++                List<Exercise> exercises = dbHelper.getExercisesForWorkout(workout.getId());
++
++                // Build a string to display workout details
++                StringBuilder details = new StringBuilder();
++                details.append("Workout: ").append(workout.getName()).append("\n");
++                details.append("Date: ").append(workout.getDate()).append("\n\n");
++
++                if (exercises.isEmpty()) {
++                    details.append("No exercises");
++                } else {
++                    details.append("Exercises:").append("\n");
++                    for (Exercise exercise : exercises) {
++                        details.append("- ").append(exercise.getName());
++
++                        // Optionally add set information
++                        List<ExerciseSet> sets = dbHelper.getSetsForExercise(exercise.getId());
++                        if (!sets.isEmpty()) {
++                            details.append(" (").append(sets.size()).append(" sets)");
++                        }
++
++                        details.append("\n");
++                    }
++                }
++
+                 // Show details in a toast
+-                Toast.makeText(WorkoutHistoryActivity.this,
+-                        "Workout: " + workout.getName() + "\n" +
+-                                "Exercise: " + workout.getExercise() + "\n" +
+-                                "Date: " + workout.getDate(),
+-                        Toast.LENGTH_LONG).show();
++                Toast.makeText(WorkoutHistoryActivity.this, details.toString(), Toast.LENGTH_LONG).show();
+             }
+ 
+             @Override
+@@ -77,8 +103,7 @@
+                         .setNegativeButton("Cancel", null)
+                         .show();
+             }
+-        });
+-    }
++        });}
+ 
+     @Override
+     public boolean onSupportNavigateUp() {
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	
++++ b/app/src/main/AndroidManifest.xml	(date 1744136459678)
+@@ -25,6 +25,9 @@
+                 android:name="android.support.PARENT_ACTIVITY"
+                 android:value=".activities.MainActivity" />
+         </activity>
++        <activity
++            android:name=".activities.WorkoutDetailActivity"
++            android:parentActivityName=".activities.MainActivity" />
+ 
+         <activity
+             android:name=".activities.AddWorkoutActivity"
