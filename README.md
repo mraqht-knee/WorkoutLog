@@ -13,7 +13,8 @@ A simple Android application for tracking workout sessions. This app allows user
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/7bcce15b-48f7-4479-a2f9-ea56dabc1068)
+![image](https://github.com/user-attachments/assets/7885e5e9-7a39-4208-aed6-6e7a3eda4487)
+
 
 ## Technical Details
 
